@@ -10,5 +10,5 @@ while [ ! -f credentials.json ]; do
 done
 
 echo "credentials.json found. Starting Gunicorn..."
-# Start the Gunicorn server.
-gunicorn app:app
+# Start Gunicorn and bind it to the host and port Render provides.
+gunicorn --bind 0.0.0.0:$PORT app:app
