@@ -1,5 +1,7 @@
 
 import os
+from flask import Flask, request, jsonify
+from flask_cors import CORS
 from dotenv import load_dotenv
 import base64
 from email.message import EmailMessage
@@ -114,5 +116,6 @@ def create_draft_handler():
         return jsonify({"status": "error", "message": f"Failed to create draft: {e}"})
 # ---------------------------------------------
 
-if __name__ == "__main__":
-    app.run(debug=True)
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=False)
