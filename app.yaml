@@ -1,0 +1,10 @@
+# Specifies the Python 3 runtime environment
+runtime: python312
+
+# Configures the entrypoint for the application.
+# This is the command App Engine will use to start your server.
+entrypoint: gunicorn --bind :$PORT app:app
+
+# Configures the instance class for the application.
+# F1 is the smallest instance, which is free and has enough memory.
+instance_class: F1
