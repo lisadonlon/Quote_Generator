@@ -125,10 +125,10 @@ def health_check():
         "timestamp": "2025-09-02"
     })
 
-@app.route("/", methods=["GET"])
-def root():
-    """Root endpoint."""
-    return jsonify({"message": "AI Quote Agent API", "status": "running"})
+@app.route("/test", methods=["GET"])
+def test_route():
+    """Test route to verify routing is working."""
+    return jsonify({"message": "Test route working!", "timestamp": "2025-09-03"})
 
 @app.route("/chat", methods=["POST"])
 def chat_handler():
