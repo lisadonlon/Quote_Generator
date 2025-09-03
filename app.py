@@ -129,6 +129,8 @@ def health_check():
 def root():
     """Root endpoint."""
     return jsonify({"message": "AI Quote Agent API", "status": "running"})
+
+@app.route("/chat", methods=["POST"])
 def chat_handler():
     user_message = request.json.get("message", "No message received")
     try:
